@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: inline-block;
+  padding: 20px 20px 0px 48px;
+  font-size: 10px;
+  color: white;
+  width: 300px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.movieIcon {
+  height: 180px;
+  width: 315px;
+  transition: 1s;
+}
+
+.movieIcon:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.movieContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.movieButton {
+  margin-top: 20px;
+  margin-left: 88px;
+  border-radius: 20px;
+  height: 38px;
+  width: 140px;
+}/*# sourceMappingURL=Movies.module.css.map */
