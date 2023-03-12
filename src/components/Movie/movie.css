@@ -1,0 +1,35 @@
+.container {
+  display: inline-block;
+  padding: 20px 20px 0px 4px;
+  font-size: 10px;
+  color: white;
+  width: 300px;
+  height: 270px;
+  margin-bottom: 20px;
+  margin: 10px 20px 20px 20px;
+}
+
+.movie-icon {
+  height: 200px;
+  width: 330px;
+  transition: 1s;
+}
+
+.movie-icon:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.movie-button {
+  margin-top: 20px;
+  margin-left: 88px;
+  border-radius: 20px;
+  height: 38px;
+  width: 140px;
+}/*# sourceMappingURL=movie.css.map */
