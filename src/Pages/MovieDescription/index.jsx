@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams} from "react-router-dom"
 import "./movieDescription.css";
+import Loader from "../../components/Loader"
+
 
 const MovieDescription = () => {
   const [movies, setMoviesDescription] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, isError] = useState(true)
+
+  const { id } = useParams()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,17 +21,26 @@ const MovieDescription = () => {
           const data= await response.json()
 
           setMoviesDescription(data)
+
+          if(!data){
+            throw new SyntaxError("We’ve found no movies, sorry!");
+          }
       } catch (error){
-         console.log("Incorrect data")
+         alert("We’ve found no movies, sorry!")
       }
 
       setLoading(false)
+
+      if(!{id}){
+        isError(false)
+      }
+
+
     }
 
     fetchData()
   },[])
 
-  const { id } = useParams()
 
   const result= movies.map((movie)=>(
    
@@ -35,11 +49,13 @@ const MovieDescription = () => {
   ))
 
 
-
   return (
     <div>
 
-      {loading && "Loading"}
+      {loading} && <Loader />
+      <br />
+      {error && "Ooops, something went wrong"}
+      
 
       <div className='description'>{result}</div> 
 

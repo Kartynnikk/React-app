@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import "./movies.css";
 import Movie from "../Movie"
+import Loader from "../Loader"
+
 
 
 const Movies = () => {
@@ -17,8 +19,12 @@ const Movies = () => {
           const data= await response.json()
 
           setMovies(data)
+
+          if(!data){
+            throw new SyntaxError("We’ve found no movies, sorry!");
+          }
       } catch (error){
-         console.log("Incorrect data")
+        alert("We’ve found no movies, sorry!")
       }
 
       setLoading(false)
@@ -32,7 +38,7 @@ const Movies = () => {
 
         <div className="header">
 
-          {loading && "Loading"}
+          {loading} && <Loader />
 
           <div className="wrapper">
               {movies.map((movie) => (
