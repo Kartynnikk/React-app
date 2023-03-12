@@ -1,10 +1,10 @@
 import React from 'react'
 import logoImage from "../../assets/image/movieLogo.png"
-import style from "../Header/Header.module.css"
+import "./header.css"
 
 const Header = () => {
   return (
-    <div className={style.headerContainer}>
+    <div className="header-container">
 
         <img src={logoImage} alt="logo" height="70" />
 
